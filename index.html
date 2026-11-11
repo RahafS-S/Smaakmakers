@@ -91,13 +91,14 @@
         <p id="gekozen"></p>
 
         <form action="verwerk.php" method="post">
-            <input type="text" name="naam" placeholder="Naam">
+            <label for="naam">Naam</label>
+            <input type="text" name="naam" id="naam" placeholder="Naam">
+            <label for="email">E-mailadres</label>
+            <input type="email" name="email" id="email" placeholder="E-mailadres">
 
-            <input type="text" name="email" placeholder="E-mailadres">
-
-            Telefoon (optioneel)
-            <input type="text" name="telefoon">
-
+            <label for="telefoon">Telefoon (optioneel)</label>
+            <input type="tel" id="telefoon" name="telefoon">
+            <label for="workshop">Workshop</label>
             <select name="workshop" id="workshop">
                 <option value="">-- Kies een workshop --</option>
                 <option value="1">Verse pasta maken</option>
@@ -108,15 +109,19 @@
                 <option value="6">Taarten en gebak</option>
             </select>
 
-            Aantal personen
-            <input type="text" name="aantal" value="1">
+            <label for="aantal">Aantal personen</label>
+            <input type="number" id="aantal" name="aantal" value="1" min="1">
 
-            <textarea name="opmerking" placeholder="Allergieën of opmerkingen"></textarea>
+            <label for="opmerking">Opmerkingen</label>
+            <textarea name="opmerking" id="opmerking" placeholder="Allergieën of opmerkingen"></textarea>
 
-            <input type="checkbox" name="akkoord"> Ik ga akkoord met de voorwaarden
-
+            <label>
+              <input type="checkbox" id="akkoord" name="akkoord">
+                      Ik ga akkoord met de voorwaarden
+            </label>
+            <label for="prijs">Totaalprijs</label>
             <input type="hidden" name="prijs" id="prijs" value="0">
-
+            <label for="prijs" id="prijs-label">€ 0,00</label>
             <button type="submit">Verstuur</button>
         </form>
     </section>
